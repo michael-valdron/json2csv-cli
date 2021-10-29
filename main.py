@@ -115,7 +115,7 @@ def write_to_csv(out_file: str, fieldnames: List[str], parsed_json: Dict[str, Li
         with open(out_file, 'a', newline='') as fp:
             writer = csv.writer(fp, delimiter=delimiter, quotechar=quotechar)
             for k, v in update_lists_to_sets(parsed_json):
-                writer.writerow((k, *map(lambda field: int(field in v), fieldnames)))
+                writer.writerow((k, *map(lambda field: int(field in v), fieldnames[1:])))
         return True
     except IOError as e:
         print(str(e))

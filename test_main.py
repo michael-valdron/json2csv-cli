@@ -62,8 +62,8 @@ class Test(TestCase):
             with open(self._csv_file, 'r') as fp:
                 self.assertEqual("person,view_grades,change_grades,add_grades,"
                                  "delete_grades,view_classes,change_classes,add_classes,"
-                                 "delete_classes\nstudent1,0,1,0,0,0,1,0,0,0\n"
-                                 "student2,0,1,0,0,0,1,0,0,0\nteacher,0,1,1,1,1,1,0,0,0\n", fp.read())
+                                 "delete_classes\nstudent1,1,0,0,0,1,0,0,0\n"
+                                 "student2,1,0,0,0,1,0,0,0\nteacher,1,1,1,1,1,0,0,0\n", fp.read())
         finally:
             if main.os.path.exists(self._csv_file):
                 main.os.remove(self._csv_file)
@@ -76,9 +76,9 @@ class Test(TestCase):
             with open(self._csv_file, 'r') as fp:
                 self.assertEqual("person,view_grades,change_grades,add_grades,"
                                  "delete_grades,view_classes,change_classes,add_classes,"
-                                 "delete_classes\nstudent1,0,1,0,0,0,1,0,0,0\n"
-                                 "student2,0,1,0,0,0,1,0,0,0\nstudent3,0,1,0,0,0,1,0,0,0\n"
-                                 "teacher,0,1,1,1,1,1,0,0,0\n", fp.read())
+                                 "delete_classes\nstudent1,1,0,0,0,1,0,0,0\n"
+                                 "student2,1,0,0,0,1,0,0,0\nstudent3,1,0,0,0,1,0,0,0\n"
+                                 "teacher,1,1,1,1,1,0,0,0\n", fp.read())
         finally:
             if main.os.path.exists(self._csv_file):
                 main.os.remove(self._csv_file)
